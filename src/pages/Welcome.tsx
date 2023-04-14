@@ -16,8 +16,8 @@ export default function Welcome() {
   },[])
 
   return (
-    <div className='w-[80%] h-screen flex py-4'>
-      <div className='h-full w-1/2 bg-[#C2B7BC]'>
+    <div className='lg:w-[80%] h-screen flex flex-col lg:flex-row py-4'>
+      <div className='h-full lg:w-1/2 bg-[#C2B7BC]'>
         <img src={welcome} className="w-full h-full object-cover" alt="" />
       </div>
 
