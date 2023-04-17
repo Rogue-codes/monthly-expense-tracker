@@ -3,7 +3,7 @@ import Backdrop from "./Backdrop";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from 'uuid';
 import { budgetContext } from "../context/Reducer";
-
+import {MdCancel} from "react-icons/md"
 interface modalProps {
   closeModal: () => void;
 }
@@ -62,30 +62,27 @@ export default function Modal({ closeModal }: modalProps) {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="w-[45rem] h-[25rem] bg-white-primary px-9 py-16 shadow-2xl"
+        className="w-[25rem] relative h-[25rem] bg-[#fff] px-9 py-16 shadow-2xl rounded-md"
       >
-        <div className="w-full h-16 flex justify-between items-center">
+        <div className="w-full ">
           <input
             type="text"
-            className="w-[48%] h-full border border-[#000] bg-transparent rounded-lg focus:outline-none p-2"
+            className="w-full h-12 border border-[#000] bg-transparent rounded-lg focus:outline-none p-2"
             placeholder="expense title"
             value={formData.name}
             onChange={(e)=>setFormData({...formData,name:e.target.value})}
           />
           <input
             type="text"
-            className="w-[48%] h-full border border-[#000] bg-transparent rounded-lg focus:outline-none p-2"
+            className="w-full h-12 mt-8 border border-[#000] bg-transparent rounded-lg focus:outline-none p-2"
             placeholder="expense amount"
             value={formData.amount?.toString() ?? ""}
             onChange={(e)=>setFormData({...formData,amount:parseInt(e.target.value)})}
           />
-        </div>
-
-        <div className="mt-16 w-full h-16 flex justify-between items-center">
           <select
             name=""
             id=""
-            className="w-[50%] mx-auto h-full border border-[#000] bg-transparent rounded-lg focus:outline-none p-2"
+            className="w-full mx-auto h-12 mt-8 border border-[#000] bg-transparent rounded-lg focus:outline-none p-2"
             value={formData.category}
             onChange={(e)=>setFormData({...formData,category:e.target.value})}
           >
@@ -98,10 +95,14 @@ export default function Modal({ closeModal }: modalProps) {
           </select>
         </div>
 
-        <div className="w-full mt-12 h-20 flex justify-center items-center">
-          <button className='w-[20.5rem] text-lg mx-auto rounded-[4px] h-12 bg-yellow-100' onClick={handleClick}>
+        <div className="w-full mt-2 h-20 flex justify-center items-center">
+          <button className='w-[12.5rem] text-md mx-auto rounded-[4px] h-12 bg-yellow-100 hover:scale-110 transition-transform' onClick={handleClick}>
             Submit
           </button>
+        </div>
+
+        <div className="absolute right-0 top-0">
+          <MdCancel size={30} cursor="pointer" onClick={closeModal}/>
         </div>
       </motion.div>
     </Backdrop>

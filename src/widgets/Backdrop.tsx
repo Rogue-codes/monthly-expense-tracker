@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 interface modalProps{
     children: ReactNode,
-    closeModal: any
+    closeModal?: any
 }
 
 export default function Backdrop({children,closeModal}:modalProps) {

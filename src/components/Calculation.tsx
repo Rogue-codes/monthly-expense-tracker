@@ -31,6 +31,12 @@ export default function Calculation() {
   const percentage =
     state.goals && state.income && (state.goals / 100) * state.income;
 
+    const value: number = state.income && totalExpense
+      ? (totalExpense / state.income) * 100
+      : 0;
+    
+      const roundedValue = Number(value.toFixed(2));
+
   return (
     <div className="w-full lg:w-[18rem] pt-2 pb-8 mt-8 bg-[#FBFBFB]">
       <div className="p-4 border-b-2 flex justify-center items-center">
@@ -48,11 +54,7 @@ export default function Calculation() {
       </div>
       <div className="w-[12rem] mx-auto">
         <CircularProgressbar
-          value={
-            state.income && totalExpense
-              ? (totalExpense / state.income) * 100
-              : 0
-          }
+          value={roundedValue}
           text={`${state.income && (totalExpense / state.income) * 100}%`}
           styles={
             state.income && (totalExpense / state.income) * 100 <= 50
