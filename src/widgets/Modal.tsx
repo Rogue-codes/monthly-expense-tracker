@@ -62,7 +62,7 @@ export default function Modal({ closeModal }: modalProps) {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="w-[25rem] relative h-[25rem] bg-[#fff] px-9 py-16 shadow-2xl rounded-md"
+        className="w-[80%] mx-auto lg:w-[25rem] relative h-[25rem] bg-[#fff] px-9 py-16 shadow-2xl rounded-md"
       >
         <div className="w-full ">
           <input

@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useReducer } from "react";
+import { toast } from "react-toastify";
 
 interface providerInterface {
   children: ReactNode;
@@ -83,26 +84,28 @@ const reducer = (
                 amount:
                   exp.amount &&
                   newExpenses.amount &&
-                  exp.amount + newExpenses.amount,
+                  exp.amount + newExpenses.amount, 
               }
             : exp
         );
+        toast.success(`${newExpenses.name} price increased`)
       } else {
         updatedExpenses = [...state.expenses, newExpenses];
+        toast.success(`new expense: ${newExpenses.name} added`)
       }
       localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
-      return { ...state, expenses: updatedExpenses };
+      return { ...state, expenses: updatedExpenses};
 
     case "delete_expense":
       const newExpensesArr = state.expenses.filter(
         (exp) => exp.id !== action.payload
       );
       localStorage.setItem("expenses", JSON.stringify(newExpensesArr));
+      toast.error(`expense removed successfully`)
       return {
         ...state,
         expenses: newExpensesArr,
       };
-
     default:
       return state;
   }

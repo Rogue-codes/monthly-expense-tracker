@@ -25,12 +25,12 @@ export default function Header({showModal,setShowModal}:headerProps) {
     <div className='w-full border-b flex flex-col lg:flex-row items-start justify-between lg:items-center p-2'>
       <div className=''>
         <p className='text-xs hidden lg:block lg:text-lg text-yellow-100 leading-[29px] -mb-5'>Expenses</p>
-        <h2 className='text-sm lg:text-5xl text-white-primary leading-[82px] font-extrabold'>Monthly <span className='text-green-100'>budget</span></h2>
+        <h2 className='text-sm hidden lg:block lg:text-5xl text-white-primary leading-[82px] font-extrabold'>Monthly <span className='text-green-100'>budget</span></h2>
       </div>
 
-      <div>
+      <div className='flex gap-8 justify-between items-center'>
         <Button type="openModal" openModal={openModal} content='New  Expense'/>
-        <span className='ml-9 text-white-primary'>Welcome <b>{state.username}</b></span>
+        <span className='lg:ml-9 text-white-primary'>Welcome <b>{state.username}</b></span>
       </div>
 
       <AnimatePresence

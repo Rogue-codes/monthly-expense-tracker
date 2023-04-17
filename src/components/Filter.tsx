@@ -9,7 +9,7 @@ export default function Filter({filterVal,setFilterVal}:filterProps) {
   return (
     <div className='w-full mt-8 p-2 flex justify-between items-center'>
         <p className='text-lg hidden lg:block text-yellow-100 font-normal leading-7'>Description</p>
-        <div className='!w-56 rounded-lg py-5 px-2 h-[1.8rem] flex justify-between items-center border border-yellow-100'>
+        <div className='w-full lg:!w-56 rounded-lg py-5 px-2 h-[1.8rem] flex justify-between items-center border border-yellow-100'>
             <p className='text-white-primary font-bold text-md leading-5'>Filter  expenses</p>
             <select value={filterVal} onChange={(e)=>setFilterVal(e.target.value)} className='w-16 pl-3 border-l-2 border-white-primary bg-[#000] text-yellow-100 focus:outline-none' name="" id="">
                 <option value="" selected>All</option>

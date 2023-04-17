@@ -54,6 +54,7 @@ export default function Calculation() {
       </div>
       <div className="w-[12rem] mx-auto">
         <CircularProgressbar
+        maxValue={100}
           value={roundedValue}
           text={`${state.income && (totalExpense / state.income) * 100}%`}
           styles={

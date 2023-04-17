@@ -23,22 +23,23 @@ export default function Form() {
     dispatch({ type: 'update_income', payload: userIncome });
     dispatch({ type: 'update_login_status', payload: true });
     navigate('/home')
+    toast.success(`"login successful"`)
 
   }
 
   return (
-    <div className='h-full w-full lg:w-1/2 pb-5 lg:pb-0 bg-[#1E1E1E]'>
+    <div className='h-full w-full lg:w-1/2 pb-5 lg:pb-0 bg-[#1E1E1E]' >
         <h2 className='font-normal text-md lg:text-[3rem] leading-[81.66px] text-white-primary flex justify-center mt-2 lg:mt-[6rem]'>Monthly <span className='text-green-100'>budget</span></h2>
         <form action=""className='flex w-full flex-col' onSubmit={handleSubmit}>
-          <div className='mx-auto'>
+          <div className='mx-auto w-[90%]'>
             <input type="number" value={userIncome?.toString() ?? ""} onChange={(e)=>setUserIncome(parseInt(e.target.value))} className='border-b-2 h-12 mb-11 bg-transparent focus:outline-none p-2 text-white-primary w-full  lg:w-[20.5rem]' name="" id="" placeholder="insert your income" />
           </div>
 
-          <div className='mx-auto'>
+          <div className='mx-auto w-[90%]'>
             <input type="text" value={user} onChange={(e)=>setUser(e.target.value)} className='border-b-2 h-12 mb-11 bg-transparent focus:outline-none p-2 text-white-primary w-full lg:w-[20.5rem]' name="" id="" placeholder='insert your name' />
           </div>
 
-          <div className='mx-auto'>
+          <div className='mx-auto w-[90%]'>
             <input type="number" value={userGoals?.toString() ?? ""} onChange={(e)=>setUserGoals(parseInt(e.target.value))} className='border-b-2 h-12 mb-11 bg-transparent focus:outline-none p-2 text-white-primary w-full lg:w-[20.5rem]' name="" id="" placeholder='insert your goals' />
           </div>
 

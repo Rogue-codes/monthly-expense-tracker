@@ -86,7 +86,7 @@ export default function Optionals() {
         <h2 className="text-2xl font-normal left-10">Optionals</h2>
       </div>
 
-      <div className="w-[14rem] rounded mx-auto mt-[1.6rem] pt-4 pb-8 px-5 bg-yellow-200">
+      <div className="w-[90%] lg:w-[14rem] rounded mx-auto mt-[1.6rem] pt-4 pb-8 px-5 bg-yellow-200">
         {data.map((item, index) => (
           <div className="mt-6 flex justify-between items-center" key={index}>
             <div className="flex items-center gap-2">
@@ -107,7 +107,7 @@ export default function Optionals() {
 
       <h2 className="text-2xl leading-10 font-normal text-center mt-8">Goals</h2>
 
-      <div className={`${percentage && percentage > availableAmount ? "border-red-500" :"border-green-100"} flex items-center gap-2 w-[18rem] border-l-4 p-5 mt-3`}>
+      <div className={`${percentage && percentage > availableAmount ? "border-red-500" :"border-green-100"} flex items-center gap-2 text-center lg:text-start leading-7 lg:w-[18rem] border-l-4 p-5 mt-3`}>
         <p className="text-sm font-bold leading-[17px]">"Save <b>{state.goals}%</b> of this amount entered this month from my salary"</p>
         <span>{percentage && percentage > availableAmount&&<RiErrorWarningLine color="red"/>}</span>
       </div>
